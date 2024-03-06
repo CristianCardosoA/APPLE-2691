@@ -1,0 +1,43 @@
+
+struct Calculadora {
+    func suma(num1: Int, num2: Int) -> Int {
+        return num1 + num2
+    }
+    
+    func resta(num1: Int, num2: Int) -> Int {
+        return num1 - num2
+    }
+    
+    func multiplicacion(num1: Double, num2: Double) -> Double {
+        return num1 * num2
+    }
+    
+    func division(num1: Double, num2: Double) -> Double {
+  
+        var resultadoDivision : Double
+        
+        resultadoDivision = num1 / num2
+        
+            if resultadoDivision == 0  {
+            print("¡Error! No se puede dividir por cero.")
+        }
+        
+        return resultadoDivision
+
+    }
+}
+
+let miCalculadora = Calculadora()
+
+var resultadoSuma = miCalculadora.suma(num1: 5, num2: 3)
+print("suma: \(resultadoSuma)")
+
+var resultadoResta = miCalculadora.resta(num1: 30, num2: 22)
+print("Resta: \(resultadoResta)")
+
+var resultadoMultiplicacion = miCalculadora.multiplicacion(num1: 14.0, num2: 6.0)
+print("Multiplicacion: \(resultadoMultiplicacion)")
+
+var resultadoDivision = miCalculadora.division(num1: 15.0, num2: 2.0)
+print("División: \(resultadoDivision)")
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>struct Calculadora {
+    
+    func suma (num1: Int, num2: Int) -&gt; Int {
+        return num1 + num2
+    }
+
+    func resta (num1: Int, num2: Int) -&gt; Int {
+        return num1 - num2
+    }
+
+    func multiplicacion (num1: Int, num2: Int) -&gt; Int {
+        return num1 * num2
+    }
+
+    func division (num1: Int, num2: Int) -&gt; Int {
+        if (num2 == 0 ){
+            print ("ERROR")
+        }
+        return num1 / num2
+    }
+    
+}
+
+let miCalculadora = Calculadora ()
+
+print(miCalculadora.suma(num1:2, num2:8))
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 510}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

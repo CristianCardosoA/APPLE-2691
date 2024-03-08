@@ -1,23 +1,73 @@
-import UIKit
-
-func suma(_ numero1: Double, _ numero2: Double) -> Double{
+enum CalculadoraError {
     
-    return numero1 + numero2
+    case divZero
+    case masNum
+    case minNum
 }
 
-func resta(_ numero1: Double, _ numero2: Double) -> Double{
-    
-    return numero1 - numero2
+enum Operacion{
+    case sum
+    case res
+    case mul
+    case div
 }
 
-func multiplicacion(_ numero1: Double, _ numero2: Double) -> Double{
+protocol DisplayProtocol {
     
-    return numero1 * numero2
+    func muestraResultado(resultado: Double) -> String
+    func muestraNumero(numero: Double) -> String
+    func muestraError(error: CalculadoraError) -> String
 }
 
-func division(_ numero1: Double, _ numero2: Double) -> Double{
+protocol ProcesamientoProtocol {
     
-    return numero1 / numero2
+    func sum(x: Double, y: Double) -> Double
+    func res(x: Double, y: Double) -> Double
+    func mul(x: Double, y: Double) -> Double
+    func div(x: Double, y: Double) -> Double
 }
+
+protocol CacheProtocol {
+    
+    func guardaNum(num: Int) -> Double
+    func guardaOp(op: Operacion)
+}
+
+protocol ControlProtocol {
+    
+    func igual() -> Double
+}
+
+protocol CalculadoraProtocol {
+    
+}
+
+
+struct Display: DisplayProtocol{
+    func muestraResultado(resultado: Double) -> String {
+        "AUN NO ESTA IMPLEMENTADO"
+    }
+    
+    func muestraNumero(numero: Double) -> String {
+        "AUN NO ESTA IMPLEMENTADO"
+    }
+    
+    func muestraError(error: CalculadoraError) -> String {
+        "AUN NO ESTA IMPLEMENTADO"
+    }
+    
+}
+
+struct Calculadora: CalculadoraProtocol {
+    
+    var display: DisplayProtocol = Display()
+    var cache: CacheProtocol = Cache()
+    var control: ControlProtocol = Control()
+    var procesamiento: ProcesamientoProtocol = Procesamiento()
+    
+    
+}
+
+
 
 

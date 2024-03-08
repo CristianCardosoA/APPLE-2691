@@ -1,0 +1,23 @@
+struct Calculadora {
+  func suma(x1: Double, x2: Double) -> Double {
+      return x1 + x2
+  }
+
+  func resta(x1: Double, x2: Double) -> Double {
+      return x1 - x2
+  }
+
+  func division(x1: Double, x2: Double) -> Double {
+      return x1 / x2
+  }
+
+  func multiplicacion(x1: Double, x2: Double) -> Double {
+      return x1 * x2
+  }
+}
+
+let miCalculadora = Calculadora() // Creamos una instancia de la estructura Calculadora
+print(miCalculadora.suma(x1: 6.7, x2: 1.2)) // Imprime 2.0 (resultado de 1 + 1)
+print(miCalculadora.resta(x1: 2.8, x2: 2.6)) // Imprime 0.0 (resultado de 2 - 2)
+print(miCalculadora.division(x1: 2.5, x2: 2)) // Imprime 1.0 (resultado de 2 / 2)
+print(miCalculadora.multiplicacion(x1: 1.9, x2: 10)) // Imprime 10.0 (resultado de 1 * 10)

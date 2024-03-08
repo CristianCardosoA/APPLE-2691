@@ -41,3 +41,13 @@ let valorDiv = calculadora.operacionDivision(num1: 12, num2: 0)
 print(valorDiv == 0 ? "Error" : "El resultado de la division es \(valorDiv)")
 
 print("El resultado de la multiplicacion es \(calculadora.operacionMultiplicacion(num1: 23.3, num2: 43.2))")
+
+let miCalculadora2 = Calculadora()
+let resultado = miCalculadora2.operacionDivision(num1: 1, num2: 0)
+print(resultado)
+
+/*if resultado == Double.Infinity
+    print("no se puede")
+ */
+
+

@@ -29,19 +29,30 @@ protocol ProcesamientoProtocol {
 
 protocol CacheProtocol {
     
-    func guardaNum(num: Int) -> Double
-    func guardaOp(op: Operacion)
+    mutating func
 }
 
-protocol ControlProtocol {
-    
-    func igual() -> Double
-}
+
 
 protocol CalculadoraProtocol {
     
+    func valorx(_ valor: Double)
+    func valory(_ valor: Double)
+    func realizarOperacion() -> Double
+    
 }
 
+struct CacheModelo {
+    var valorX: Double
+    var valorY: Double
+    var op: Operacion
+    
+    init(){
+        valorX = 0.0
+        valorX = 0.0
+        
+    }
+}
 
 struct Display: DisplayProtocol{
     func muestraResultado(resultado: Double) -> String {
@@ -58,16 +69,79 @@ struct Display: DisplayProtocol{
     
 }
 
-struct Calculadora: CalculadoraProtocol {
+struct Cache: CacheProtocol{
     
-    var display: DisplayProtocol = Display()
-    var cache: CacheProtocol = Cache()
-    var control: ControlProtocol = Control()
-    var procesamiento: ProcesamientoProtocol = Procesamiento()
+    var cacheString = ""
+    var cacheNumerox = 0.0
+    var cacheNumeroY = 0.0
+    var cacheOperacion = Operacion.sum
+    
+    func guardaNum(num: Int) {
+        <#code#>
+    }
+    
+    func guardaOp(op: Operacion) {
+        <#code#>
+    }
+    
+    func igual() -> Double {
+        <#code#>
+    }
     
     
 }
 
 
 
+
+struct Procesamiento: ProcesamientoProtocol{
+    func sum(x: Double, y: Double) -> Double {
+        return x + y
+    }
+    
+    func res(x: Double, y: Double) -> Double {
+        return x - y
+    }
+    
+    func mul(x: Double, y: Double) -> Double {
+        return x * y
+    }
+    
+    func div(x: Double, y: Double) -> Double {
+        return x / y
+    }
+    
+    
+}
+
+struct Calculadora: CalculadoraProtocol{
+    
+   
+    var display: DisplayProtocol = Display()
+    var cache: CacheProtocol = Cache()
+    var procesamiento: ProcesamientoProtocol = Procesamiento()
+    
+    func valorx(_ valor: Double) {
+        
+    }
+    
+    func valory(_ valor: Double) {
+        <#code#>
+    }
+    
+    func realizarOperacion() -> Double {
+        <#code#>
+    }
+    
+    
+}
+
+
+    
+
+    
+    
+    
+    
+    
 

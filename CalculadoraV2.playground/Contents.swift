@@ -33,8 +33,22 @@ protocol ProcesamientoProtocol{
 
 protocol CacheProtocol{
     
-    func guardarNumero(num: Int)-> Double
-    func guardarOperacion(op: Operacion)
+    func insertaX(num: Int)-> Double
+    func insertaY(num: Int)-> Double
+    func insertaOperacion(op: Operacion)
+    func igual()->Double
+}
+
+struct cacheModelo{
+    
+    var valor1: Double
+    var valor2: Double
+    var op: Operacion
+    
+    init(){
+        
+    }
+    
 }
 
 protocol ControlProtocol{
@@ -47,15 +61,15 @@ protocol CalculadoraProtocol{}
 
 struct Display: DisplayProtocol {
     func mostrarResultado(resultado: Double) -> String {
-        "Aun no esta implementado"
+        "\(resultado)"
     }
     
     func mostrarNumero(numero: Double) -> String {
-        "Aun no esta implementado"
+        "\(numero)"
     }
     
     func mostrarError(error: CalculadoraError) -> String {
-        "Aun no esta implementado"
+        "\(error)"
     }
     
     
@@ -84,11 +98,27 @@ struct Procesamiento: ProcesamientoProtocol{
     
 struct Cache: CacheProtocol{
     
-    func guardarNumero(num: Int) -> Double {
-        
+    var modeloCache = CacheModelo()
+    var cacheString = null
+    var cacheNumeroX = 0.0
+    var cacheNumeroY = 0.0
+    var cacheOperacion = operacion.suma
+    
+    
+    func insertaX(num: Int) {
+        cacheString.
+    }
+    
+    func insertaX(num: Int) {
+        cacheString.
     }
     
     func guardarOperacion(op: Operacion) {
+        cacheOperacion = op
+    }
+    
+    fucn igual()->CacheModelo{
+        
         
     }
 }
@@ -96,7 +126,8 @@ struct Cache: CacheProtocol{
 struct Control: ControlProtocol{
     
     func igual() -> Double {
-            
+        
+        return 2.2
     }
         
 }
@@ -104,9 +135,15 @@ struct Control: ControlProtocol{
 struct Calculadora: CalculadoraProtocol {
     
     var display: DisplayProtocol = Display()
-    var cache: CacheProtocol = Cache()
+    //var cache: CacheProtocol = Cache()
     var control: ControlProtocol = Control()
     var procesamiento: ProcesamientoProtocol = Procesamiento()
     
     
 }
+
+/*let calculadora = Calculadora()
+calculadora.valor(1)
+calculadora.valor(2)
+calculadora.OPERACION(SUM)
+calculadora.*/

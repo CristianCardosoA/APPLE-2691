@@ -1,0 +1,194 @@
+import UIKit
+// Posibles errores que puedan ocurrir durante el cálculo
+enum CalculadoraError {
+    case divZero
+    case maxNum
+    case minNum
+}
+
+// Definición de las operaciones que se pueden realizar
+enum Operacion {
+    case sum
+    case res
+    case mul
+    case div
+    case raiz // Agregado: raíz cuadrada
+}
+
+// Interfaz que define métodos que muestran el resultado y errores
+protocol DisplayProtocol {
+    func muestraResultado(resultado: Double) -> String
+    func muestraError(error: CalculadoraError) -> String
+}
+
+// Interfaz que define métodos para realizar operaciones matemáticas y procesar resultados
+protocol ProcesamientoProtocol {
+    func sum(x: Double, y: Double) -> Double
+    func res(x: Double, y: Double) -> Double
+    func mul(x: Double, y: Double) -> Double
+    func div(x: Double, y: Double) -> Double
+    func raiz(x: Double) -> Double // Agregado: raíz cuadrada
+    func procesa(op: CacheModelo) -> Double
+}
+
+//Protocolo que define métodos para controlar el estado de la calculadora
+protocol CacheControlProtocol {
+    mutating func insertaX(num: Int)
+    mutating func insertaY(num: Int)
+    mutating func insertaOp(op: Operacion)
+    mutating func igual() -> CacheModelo // Método para procesar operaciones
+}
+
+//Struct que representa el modelo de caché utilizado para almacenar los números y la operación actual
+struct CacheModelo {
+    var valorX: Double
+    var valorY: Double?
+    var op: Operacion
+    // Inicializador
+    init(valorX: Double, valorY: Double? = nil, op: Operacion) {
+        self.valorX = valorX
+        self.valorY = valorY
+        self.op = op
+    }
+}
+
+//struct que implementa el protocolo DisplayProtocol
+struct Display: DisplayProtocol {
+    func muestraResultado(resultado: Double) -> String {
+        "🎃: \(resultado)"
+    }
+   
+    func muestraError(error: CalculadoraError) -> String {
+        "🤬: Error \(error)"
+    }
+}
+
+// Struct que implementa el protocolo CacheControlProtocol
+struct CacheControl: CacheControlProtocol {
+    var cacheNumeroX = ""
+    var cacheNumeroY = ""
+    var cacheOperacion = Operacion.sum
+   
+    mutating func insertaX(num: Int) {
+        cacheNumeroX.append("\(num)")
+    }
+   
+    mutating func insertaY(num: Int) {
+        cacheNumeroY.append("\(num)")
+    }
+   
+    mutating func insertaOp(op: Operacion) {
+        cacheOperacion = op
+    }
+   
+    private mutating func flush() {
+        cacheNumeroX = ""
+        cacheNumeroY = ""
+        cacheOperacion = Operacion.sum
+    }
+   
+    mutating func igual() -> CacheModelo {
+        let cache = CacheModelo(
+            valorX: Double(cacheNumeroX)!,
+            valorY: Double(cacheNumeroY) ?? nil, //Hacer opcional
+            op: cacheOperacion
+        )
+        flush()
+        return cache
+    }
+
+}
+
+// Struct que implementa el protocolo ProcesamientoProtocol
+struct Procesamiento: ProcesamientoProtocol {
+   
+    func procesa(op cacheModelo: CacheModelo) -> Double {
+        switch cacheModelo.op {
+        case .sum:
+            return sum(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 0.0)
+        case .res:
+            return res(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 0.0)
+        case .mul:
+            return mul(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 0.0)
+        case .div:
+            return div(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 1.0)
+        case .raiz: // Agregado: manejo de la operación de raíz cuadrada
+            return raiz(x: cacheModelo.valorX)
+        }
+    }
+   
+    func sum(x: Double, y: Double) -> Double {
+        return x + y
+    }
+   
+    func res(x: Double, y: Double) -> Double {
+        return x - y
+    }
+   
+    func mul(x: Double, y: Double) -> Double {
+        return x * y
+    }
+   
+    func div(x: Double, y: Double) -> Double {
+        return x / y
+    }
+
+    func raiz(x: Double) -> Double { // Agregado: implementación de la raíz cuadrada
+        return x.squareRoot()
+    }
+}
+
+// Protocolo que define los métodos necesarios para una calculadora
+protocol CalculadoraProtocol {
+   
+    mutating func valorX(x: Int)
+    mutating func valorY(y: Int)
+    mutating func operacion(op: Operacion)
+    mutating func igual() -> String
+}
+
+// Struct que implementa el protocolo CalculadoraProtocol
+struct Calculadora: CalculadoraProtocol {
+   
+    var display: DisplayProtocol = Display()
+    var cacheControl: CacheControlProtocol = CacheControl()
+    var procesamiento: ProcesamientoProtocol = Procesamiento()
+   
+    mutating func valorX(x: Int) {
+        cacheControl.insertaX(num: x)
+    }
+   
+    mutating func valorY(y: Int) {
+        cacheControl.insertaY(num: y)
+    }
+
+    mutating func raizCuadrada(x: Int) {
+        cacheControl.insertaX(num: x)
+        cacheControl.insertaOp(op: .raiz)
+    }
+   
+    mutating func operacion(op: Operacion) {
+        cacheControl.insertaOp(op: op)
+    }
+   
+    mutating func igual() -> String {
+        let cacheModelo = cacheControl.igual()
+        let resultado = procesamiento.procesa(op: cacheModelo)
+        return display.muestraResultado(resultado: resultado)
+    }
+}
+
+// Código comentado que muestra cómo se usaría la calculadora
+//var calculadora = Calculadora()
+//calculadora.valorX(x: 5)
+//calculadora.operacion(op: .mul)
+//calculadora.valorY(y: 5)
+//
+//let resultado = calculadora.igual()
+//print(resultado)
+
+var calculadora = Calculadora()
+calculadora.raizCuadrada(x: 25) // Agrega la operación de raíz cuadrada de 25
+let resultado = calculadora.igual() // Obtiene el resultado de la raíz cuadrada
+print(resultado)
+

@@ -1,149 +1,175 @@
-import UIKit
+import Foundation
 
-enum CalculadoraError{
-    
-    case divCero
+enum CalculadoraError {
+    case divZero
     case maxNum
     case minNum
 }
 
-enum Operacion{
-    
-    case suma
-    case resta
-    case multiplicacion
-    case division
+enum Operacion {
+    case sum
+    case res
+    case mul
+    case div
+    case raiz
 }
 
-protocol DisplayProtocol{
-    
-    func mostrarResultado(resultado: Double)-> String
-    func mostrarNumero(numero: Double)-> String
-    func mostrarError(error: CalculadoraError)-> String
-    
+protocol DisplayProtocol {
+    func muestraResultado(resultado: Double) -> String
+    func muestraError(error: CalculadoraError) -> String
 }
 
-protocol ProcesamientoProtocol{
-    
-    func suma(x: Double, y:Double)-> Double
-    func resta(x: Double, y:Double)-> Double
-    func multiplicacion(x: Double, y:Double)-> Double
-    func division(x: Double, y:Double)-> Double
+protocol ProcesamientoProtocol {
+    func sum(x: Double, y: Double) -> Double
+    func res(x: Double, y: Double) -> Double
+    func mul(x: Double, y: Double) -> Double
+    func div(x: Double, y: Double) -> Double
+    func raiz(x: Double) -> Double
+    func procesa(op: CacheModelo) -> Double
 }
 
-protocol CacheProtocol{
-    
-    func insertaX(num: Int)-> Double
-    func insertaY(num: Int)-> Double
-    func insertaOperacion(op: Operacion)
-    func igual()->Double
+protocol CacheControlProtocol {
+    mutating func insertaX(num: Int)
+    mutating func insertaY(num: Int)
+    mutating func insertaOp(op: Operacion)
+    mutating func igual() -> CacheModelo
 }
 
-struct cacheModelo{
-    
-    var valor1: Double
-    var valor2: Double
+struct CacheModelo {
+    var valorX: Double
+    var valorY: Double
     var op: Operacion
     
-    init(){
-        
+    init(valorX: Double, valorY: Double, op: Operacion) {
+        self.valorX = valorX
+        self.valorY = valorY
+        self.op = op
     }
-    
 }
-
-protocol ControlProtocol{
-    
-    func igual()-> Double
-}
-
-protocol CalculadoraProtocol{}
-
 
 struct Display: DisplayProtocol {
-    func mostrarResultado(resultado: Double) -> String {
-        "\(resultado)"
+    func muestraResultado(resultado: Double) -> String {
+        "🎃: \(resultado)"
     }
     
-    func mostrarNumero(numero: Double) -> String {
-        "\(numero)"
+    func muestraError(error: CalculadoraError) -> String {
+        "🤬: Error \(error)"
     }
-    
-    func mostrarError(error: CalculadoraError) -> String {
-        "\(error)"
-    }
-    
-    
-    
 }
 
-struct Procesamiento: ProcesamientoProtocol{
-    func suma(x: Double, y: Double) -> Double {
-        return x + y
+struct CacheControl: CacheControlProtocol {
+    var cacheNumeroX = ""
+    var cacheNumeroY = ""
+    var cacheOperacion = Operacion.sum
+    
+    mutating func insertaX(num: Int) {
+        cacheNumeroX.append("\(num)")
     }
     
-    func resta(x: Double, y: Double) -> Double {
-        return x - y
+    mutating func insertaY(num: Int) {
+        cacheNumeroY.append("\(num)")
     }
     
-    func multiplicacion(x: Double, y: Double) -> Double {
-        return x * y
-    }
-    
-    func division(x: Double, y: Double) -> Double {
-        return x / y
-    }
-
-        
-}
-    
-struct Cache: CacheProtocol{
-    
-    var modeloCache = CacheModelo()
-    var cacheString = null
-    var cacheNumeroX = 0.0
-    var cacheNumeroY = 0.0
-    var cacheOperacion = operacion.suma
-    
-    
-    func insertaX(num: Int) {
-        cacheString.
-    }
-    
-    func insertaX(num: Int) {
-        cacheString.
-    }
-    
-    func guardarOperacion(op: Operacion) {
+    mutating func insertaOp(op: Operacion) {
         cacheOperacion = op
     }
     
-    fucn igual()->CacheModelo{
-        
-        
+    private mutating func flush() {
+        cacheNumeroX = ""
+        cacheNumeroY = ""
+        cacheOperacion = Operacion.sum
+    }
+    
+    mutating func igual() -> CacheModelo {
+        let cache = CacheModelo(
+            valorX: Double(cacheNumeroX)!,
+            valorY: Double(cacheNumeroY)!,
+            op: cacheOperacion
+        )
+        flush()
+        return cache
+    }
+
+}
+
+
+
+struct Procesamiento: ProcesamientoProtocol {
+    
+    func procesa(op cacheModelo: CacheModelo) -> Double {
+        switch cacheModelo.op {
+        case .sum:
+            return sum(x: cacheModelo.valorX, y: cacheModelo.valorY)
+        case .res:
+            return res(x: cacheModelo.valorX, y: cacheModelo.valorY)
+        case .mul:
+            return mul(x: cacheModelo.valorX, y: cacheModelo.valorY)
+        case .div:
+            return div(x: cacheModelo.valorX, y: cacheModelo.valorY)
+        case .raiz:
+            return raiz(x: cacheModelo.valorX)
+        }
+    }
+    
+    func sum(x: Double, y: Double) -> Double {
+        return x + y
+    }
+    
+    func res(x: Double, y: Double) -> Double {
+        return x - y
+    }
+    
+    func mul(x: Double, y: Double) -> Double {
+        return x * y
+    }
+    
+    func div(x: Double, y: Double) -> Double {
+        return x / y
+    }
+    
+    func raiz(x: Double) -> Double {
+        return sqrt(x)
     }
 }
 
-struct Control: ControlProtocol{
+protocol CalculadoraProtocol {
     
-    func igual() -> Double {
-        
-        return 2.2
-    }
-        
+    mutating func valorX(x: Int)
+    mutating func valorY(y: Int)
+    mutating func operacion(op: Operacion)
+    mutating func igual() -> String
 }
 
 struct Calculadora: CalculadoraProtocol {
-    
+   
     var display: DisplayProtocol = Display()
-    //var cache: CacheProtocol = Cache()
-    var control: ControlProtocol = Control()
+    var cacheControl: CacheControlProtocol = CacheControl()
     var procesamiento: ProcesamientoProtocol = Procesamiento()
     
+    mutating func valorX(x: Int) {
+        cacheControl.insertaX(num: x)
+    }
     
+    mutating func valorY(y: Int) {
+        cacheControl.insertaY(num: y)
+    }
+    
+    mutating func operacion(op: Operacion) {
+        cacheControl.insertaOp(op: op)
+    }
+    
+    mutating func igual() -> String {
+        let cacheModelo = cacheControl.igual()
+        let resultado = procesamiento.procesa(op: cacheModelo)
+        return display.muestraResultado(resultado: resultado)
+    }
 }
 
-/*let calculadora = Calculadora()
-calculadora.valor(1)
-calculadora.valor(2)
-calculadora.OPERACION(SUM)
-calculadora.*/
+
+var calculadora = Calculadora()
+calculadora.valorX(x: 5)
+calculadora.operacion(op: .raiz)
+calculadora.valorY(y: 0)
+//
+let resultado = calculadora.igual()
+print(resultado)

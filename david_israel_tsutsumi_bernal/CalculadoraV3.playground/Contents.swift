@@ -11,7 +11,7 @@ enum Operacion {
     case res
     case mul
     case div
-    case rai
+    case raiz
 }
 
 protocol DisplayProtocol {
@@ -24,23 +24,23 @@ protocol ProcesamientoProtocol {
     func res(x: Double, y: Double) -> Double
     func mul(x: Double, y: Double) -> Double
     func div(x: Double, y: Double) -> Double
-    func rai(x: Double) -> Double
+    func raiz(x: Double) -> Double
     func procesa(op: CacheModelo) -> Double
 }
 
 protocol CacheControlProtocol {
-    mutating func insertaX(num: Double)
-    mutating func insertaY(num: Double)
+    mutating func insertaX(num: Int)
+    mutating func insertaY(num: Int)
     mutating func insertaOp(op: Operacion)
     mutating func igual() -> CacheModelo
 }
 
 struct CacheModelo {
     var valorX: Double
-    var valorY: Double
+    var valorY: Double?
     var op: Operacion
     
-    init(valorX: Double, valorY: Double, op: Operacion) {
+    init(valorX: Double, valorY: Double? = nil, op: Operacion) {//Valor y opcional
         self.valorX = valorX
         self.valorY = valorY
         self.op = op
@@ -58,16 +58,16 @@ struct Display: DisplayProtocol {
 }
 
 struct CacheControl: CacheControlProtocol {
-    var cacheNumeroX: Double = 0
-    var cacheNumeroY: Double = 0
+    var cacheNumeroX = ""
+    var cacheNumeroY = ""
     var cacheOperacion = Operacion.sum
     
-    mutating func insertaX(num: Double) {
-        cacheNumeroX = num
+    mutating func insertaX(num: Int) {
+        cacheNumeroX.append("\(num)")
     }
     
-    mutating func insertaY(num: Double) {
-        cacheNumeroY = num
+    mutating func insertaY(num: Int) {
+        cacheNumeroY.append("\(num)")
     }
     
     mutating func insertaOp(op: Operacion) {
@@ -75,15 +75,15 @@ struct CacheControl: CacheControlProtocol {
     }
     
     private mutating func flush() {
-        cacheNumeroX = 0
-        cacheNumeroY = 0
+        cacheNumeroX = ""
+        cacheNumeroY = ""
         cacheOperacion = Operacion.sum
     }
     
     mutating func igual() -> CacheModelo {
         let cache = CacheModelo(
-            valorX: cacheNumeroX,
-            valorY: cacheNumeroY,
+            valorX: Double(cacheNumeroX)!,
+            valorY: Double(cacheNumeroY) ?? nil,//Valor por defecto
             op: cacheOperacion
         )
         flush()
@@ -92,20 +92,22 @@ struct CacheControl: CacheControlProtocol {
 
 }
 
+
+
 struct Procesamiento: ProcesamientoProtocol {
     
     func procesa(op cacheModelo: CacheModelo) -> Double {
         switch cacheModelo.op {
         case .sum:
-            return sum(x: cacheModelo.valorX, y: cacheModelo.valorY)
+            return sum(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 0.0)
         case .res:
-            return res(x: cacheModelo.valorX, y: cacheModelo.valorY)
+            return res(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 0.0)
         case .mul:
-            return mul(x: cacheModelo.valorX, y: cacheModelo.valorY)
+            return mul(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 0.0)
         case .div:
-            return div(x: cacheModelo.valorX, y: cacheModelo.valorY)
-        case .rai:
-            return rai(x: cacheModelo.valorX)
+            return div(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 1.0)
+        case .raiz:
+            return raiz(x: cacheModelo.valorX)
         }
     }
     
@@ -124,14 +126,16 @@ struct Procesamiento: ProcesamientoProtocol {
     func div(x: Double, y: Double) -> Double {
         return x / y
     }
-    func rai(x: Double) -> Double {
+    
+    func raiz(x: Double) -> Double {
         return sqrt(x)
     }
 }
 
 protocol CalculadoraProtocol {
-    mutating func valorX(x: Double)
-    mutating func valorY(y: Double)
+    
+    mutating func valorX(x: Int)
+    mutating func valorY(y: Int)
     mutating func operacion(op: Operacion)
     mutating func igual() -> String
 }
@@ -142,11 +146,11 @@ struct Calculadora: CalculadoraProtocol {
     var cacheControl: CacheControlProtocol = CacheControl()
     var procesamiento: ProcesamientoProtocol = Procesamiento()
     
-    mutating func valorX(x: Double) {
+    mutating func valorX(x: Int) {
         cacheControl.insertaX(num: x)
     }
     
-    mutating func valorY(y: Double) {
+    mutating func valorY(y: Int) {
         cacheControl.insertaY(num: y)
     }
     
@@ -161,9 +165,11 @@ struct Calculadora: CalculadoraProtocol {
     }
 }
 
-var calculadora = Calculadora()
-calculadora.valorX(x: 169)
-calculadora.operacion(op: .rai)
 
+var calculadora = Calculadora()
+calculadora.valorX(x: 25)
+calculadora.operacion(op: .raiz)
+//calculadora.valorY(y: )
+//
 let resultado = calculadora.igual()
 print(resultado)

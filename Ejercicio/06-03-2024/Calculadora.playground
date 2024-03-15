@@ -1,3 +1,25 @@
+//Definición de protocolos
+
+protocol displayprotocol
+{
+	
+}
+
+protocol controlprotocol{}
+
+protocol procesamientoprotocol{}
+
+protocol calculadoraprotocol{}
+
+
+
+//Implementación
+
+
+
+
+
+
 
 struct Calculadora {
     func suma(num1: Int, num2: Int) -> Int {

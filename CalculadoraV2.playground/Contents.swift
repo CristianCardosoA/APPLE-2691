@@ -37,10 +37,10 @@ protocol CacheControlProtocol {
 
 struct CacheModelo {
     var valorX: Double
-    var valorY: Double
+    var valorY: Double?
     var op: Operacion
     
-    init(valorX: Double, valorY: Double, op: Operacion) {
+    init(valorX: Double, valorY: Double? = nil, op: Operacion) {//Valor y opcional
         self.valorX = valorX
         self.valorY = valorY
         self.op = op
@@ -83,7 +83,7 @@ struct CacheControl: CacheControlProtocol {
     mutating func igual() -> CacheModelo {
         let cache = CacheModelo(
             valorX: Double(cacheNumeroX)!,
-            valorY: Double(cacheNumeroY)!,
+            valorY: Double(cacheNumeroY) ?? nil,//Valor por defecto
             op: cacheOperacion
         )
         flush()
@@ -99,13 +99,13 @@ struct Procesamiento: ProcesamientoProtocol {
     func procesa(op cacheModelo: CacheModelo) -> Double {
         switch cacheModelo.op {
         case .sum:
-            return sum(x: cacheModelo.valorX, y: cacheModelo.valorY)
+            return sum(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 0.0)
         case .res:
-            return res(x: cacheModelo.valorX, y: cacheModelo.valorY)
+            return res(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 0.0)
         case .mul:
-            return mul(x: cacheModelo.valorX, y: cacheModelo.valorY)
+            return mul(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 0.0)
         case .div:
-            return div(x: cacheModelo.valorX, y: cacheModelo.valorY)
+            return div(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 1.0)
         case .raiz:
             return raiz(x: cacheModelo.valorX)
         }
@@ -167,9 +167,9 @@ struct Calculadora: CalculadoraProtocol {
 
 
 var calculadora = Calculadora()
-calculadora.valorX(x: 5)
+calculadora.valorX(x: 25)
 calculadora.operacion(op: .raiz)
-calculadora.valorY(y: 0)
+//calculadora.valorY(y: )
 //
 let resultado = calculadora.igual()
 print(resultado)

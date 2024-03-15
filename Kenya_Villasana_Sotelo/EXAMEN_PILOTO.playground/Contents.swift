@@ -31,14 +31,14 @@ protocol CacheProtocol {
     
     func guardaNum(num: Int) -> Double
     func guardaOp(op: Operacion)
-}
-
-protocol ControlProtocol {
-    
     func igual() -> Double
 }
 
 protocol CalculadoraProtocol {
+    
+    func valorx()
+    func valory()
+    
     
 }
 
@@ -58,6 +58,18 @@ struct Display: DisplayProtocol{
     
 }
 
+struct Cache: CacheProtocol {
+    func guardaNum(num: Int) -> Double {
+    }
+    
+
+    
+struct CacheModelo {
+        var valorX: Double
+        var valorY:Double
+        var <#name#> = <#value#>
+        
+    }
 struct Calculadora: CalculadoraProtocol {
     
     var display: DisplayProtocol = Display()
@@ -66,3 +78,4 @@ struct Calculadora: CalculadoraProtocol {
     var procesamiento: ProcesamientoProtocol = Procesamiento()
     
 }
+

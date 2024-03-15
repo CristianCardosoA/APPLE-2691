@@ -22,6 +22,7 @@ protocol ProcesamientoProtocol {
     func res(x: Double, y: Double) -> Double
     func mul(x: Double, y: Double) -> Double
     func div(x: Double, y: Double) -> Double
+    func rai(x: Double) -> Double
     func procesa(op: CacheModelo) -> Double
 }
 
@@ -34,10 +35,10 @@ protocol CacheControlProtocol {
 
 struct CacheModelo {
     var valorX: Double
-    var valorY: Double
+    var valorY: Double?
     var op: Operacion
     
-    init(valorX: Double, valorY: Double, op: Operacion) {
+    init(valorX: Double, valorY: Double? = nil, op: Operacion) {
         self.valorX = valorX
         self.valorY = valorY
         self.op = op
@@ -80,7 +81,7 @@ struct CacheControl: CacheControlProtocol {
     mutating func igual() -> CacheModelo {
         let cache = CacheModelo(
             valorX: Double(cacheNumeroX)!,
-            valorY: Double(cacheNumeroY)!,
+            valorY: Double(cacheNumeroY) ?? nil, //?? Manda el valor por defecto
             op: cacheOperacion
         )
         flush()
@@ -96,13 +97,15 @@ struct Procesamiento: ProcesamientoProtocol {
     func procesa(op cacheModelo: CacheModelo) -> Double {
         switch cacheModelo.op {
         case .sum:
-            return sum(x: cacheModelo.valorX, y: cacheModelo.valorY)
+            return sum(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 0.0)
         case .res:
-            return res(x: cacheModelo.valorX, y: cacheModelo.valorY)
+            return res(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 0.0)
         case .mul:
-            return mul(x: cacheModelo.valorX, y: cacheModelo.valorY)
+            return mul(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 0.0)
         case .div:
-            return div(x: cacheModelo.valorX, y: cacheModelo.valorY)
+            return div(x: cacheModelo.valorX, y: cacheModelo.valorY ?? 1.0)
+        case .rai:
+            return rai(x: cacheModelo.valorX)
         }
     }
     

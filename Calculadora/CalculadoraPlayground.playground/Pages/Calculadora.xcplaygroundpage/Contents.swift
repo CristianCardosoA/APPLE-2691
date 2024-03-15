@@ -156,12 +156,12 @@ struct Calculadora: CalculadoraProtocol {
 }
 
 
-//var calculadora = Calculadora()
-//calculadora.valorX(x: 5)
-//calculadora.operacion(op: .mul)
-//calculadora.valorY(y: 5)
-//
-//let resultado = calculadora.igual()
-//print(resultado)
+var calculadora = Calculadora()
+calculadora.valorX(x: 5)
+calculadora.operacion(op: .mul)
+calculadora.valorY(y: 5)
+
+let resultado = calculadora.igual()
+print(resultado)
 
 

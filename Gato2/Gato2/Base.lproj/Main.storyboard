@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gato2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="9VJ-cf-Nmz">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Cvw-HT-HMI">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="253"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unam" translatesAutoresizingMaskIntoConstraints="NO" id="18L-mw-5g0">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" red="0.109803915" green="0.15294116739999999" blue="0.46666666870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unam" translatesAutoresizingMaskIntoConstraints="NO" id="EjK-2p-zIq">
+                                                <rect key="frame" x="131" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unam" translatesAutoresizingMaskIntoConstraints="NO" id="EOq-cv-QyL">
+                                                <rect key="frame" x="262" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" red="0.109803915" green="0.15294116739999999" blue="0.46666666870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="7No-rv-4bj">
+                                        <rect key="frame" x="0.0" y="253" width="393" height="253"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unam" translatesAutoresizingMaskIntoConstraints="NO" id="Kgq-Ew-uII">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unam" translatesAutoresizingMaskIntoConstraints="NO" id="fg4-At-RJo">
+                                                <rect key="frame" x="131" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" red="0.109803915" green="0.15294116739999999" blue="0.46666666870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unam" translatesAutoresizingMaskIntoConstraints="NO" id="7T6-eY-QRu">
+                                                <rect key="frame" x="262" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="7md-ZK-J9q">
+                                        <rect key="frame" x="0.0" y="506" width="393" height="253"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unam" translatesAutoresizingMaskIntoConstraints="NO" id="I62-TH-FjD">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" red="0.109803915" green="0.15294116739999999" blue="0.46666666870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unam" translatesAutoresizingMaskIntoConstraints="NO" id="0eV-ya-bee">
+                                                <rect key="frame" x="131" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unam" translatesAutoresizingMaskIntoConstraints="NO" id="wg6-7f-fAf">
+                                                <rect key="frame" x="262" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" red="0.109803915" green="0.15294116739999999" blue="0.46666666870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9VJ-cf-Nmz" secondAttribute="trailing" id="A9z-Ac-pdg"/>
+                            <constraint firstItem="9VJ-cf-Nmz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="G0W-yV-8O7"/>
+                            <constraint firstItem="9VJ-cf-Nmz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ePo-aj-Fzf"/>
+                            <constraint firstItem="9VJ-cf-Nmz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jaK-Ay-ifE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="img1" destination="18L-mw-5g0" id="OLk-aT-6Um"/>
+                        <outlet property="img2" destination="EjK-2p-zIq" id="KxY-ql-zLY"/>
+                        <outlet property="img3" destination="EOq-cv-QyL" id="FhT-CM-Bqk"/>
+                        <outlet property="img4" destination="Kgq-Ew-uII" id="Zd9-fl-l3l"/>
+                        <outlet property="img5" destination="fg4-At-RJo" id="AWJ-XR-atw"/>
+                        <outlet property="img6" destination="7T6-eY-QRu" id="9Hx-Ee-1J1"/>
+                        <outlet property="img7" destination="I62-TH-FjD" id="XQd-rl-V0C"/>
+                        <outlet property="img8" destination="0eV-ya-bee" id="lgn-Ni-vnR"/>
+                        <outlet property="img9" destination="wg6-7f-fAf" id="IXg-bq-lYY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="unam" width="150" height="168.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

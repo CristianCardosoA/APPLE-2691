@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     func iteracion(){
         for i in 1...100{
+            
             //Usando .insert
             arrayNum.insert(i, at: i-1)
             

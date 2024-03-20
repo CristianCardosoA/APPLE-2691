@@ -81,42 +81,42 @@ class ViewController: UIViewController {
         isSol.toggle()
     }
     @objc func tapImg2(_ sender: UITapGestureRecognizer){
-        img1.image = isSol ? UIImage(named: "sol")
+        img2.image = isSol ? UIImage(named: "sol")
         :UIImage(named: "aguila")
         isSol.toggle()
     }
     @objc func tapImg3(_ sender: UITapGestureRecognizer){
-        img1.image = isSol ? UIImage(named: "sol")
+        img3.image = isSol ? UIImage(named: "sol")
         :UIImage(named: "aguila")
         isSol.toggle()
     }
     @objc func tapImg4(_ sender: UITapGestureRecognizer){
-        img1.image = isSol ? UIImage(named: "sol")
+        img4.image = isSol ? UIImage(named: "sol")
         :UIImage(named: "aguila")
         isSol.toggle()
     }
     @objc func tapImg5(_ sender: UITapGestureRecognizer){
-        img1.image = isSol ? UIImage(named: "sol")
+        img5.image = isSol ? UIImage(named: "sol")
         :UIImage(named: "aguila")
         isSol.toggle()
     }
     @objc func tapImg6(_ sender: UITapGestureRecognizer){
-        img1.image = isSol ? UIImage(named: "sol")
+        img6.image = isSol ? UIImage(named: "sol")
         :UIImage(named: "aguila")
         isSol.toggle()
     }
     @objc func tapImg7(_ sender: UITapGestureRecognizer){
-        img1.image = isSol ? UIImage(named: "sol")
+        img7.image = isSol ? UIImage(named: "sol")
         :UIImage(named: "aguila")
         isSol.toggle()
     }
     @objc func tapImg8(_ sender: UITapGestureRecognizer){
-        img1.image = isSol ? UIImage(named: "sol")
+        img8.image = isSol ? UIImage(named: "sol")
         :UIImage(named: "aguila")
         isSol.toggle()
     }
     @objc func tapImg9(_ sender: UITapGestureRecognizer){
-        img1.image = isSol ? UIImage(named: "sol")
+        img9.image = isSol ? UIImage(named: "sol")
         :UIImage(named: "aguila")
         isSol.toggle()
     }

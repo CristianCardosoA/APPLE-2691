@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var img9: UIImageView!
     
+    var isSol = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,31 +76,49 @@ class ViewController: UIViewController {
         
     }
     @objc func tapImg1(_ sender: UITapGestureRecognizer){
-        print("🤣 click 1")
+        img1.image = isSol ? UIImage(named: "sol")
+        :UIImage(named: "aguila")
+        isSol.toggle()
     }
     @objc func tapImg2(_ sender: UITapGestureRecognizer){
-        print("🤣 click 2")
+        img1.image = isSol ? UIImage(named: "sol")
+        :UIImage(named: "aguila")
+        isSol.toggle()
     }
     @objc func tapImg3(_ sender: UITapGestureRecognizer){
-        print("🤣 click 3")
+        img1.image = isSol ? UIImage(named: "sol")
+        :UIImage(named: "aguila")
+        isSol.toggle()
     }
     @objc func tapImg4(_ sender: UITapGestureRecognizer){
-        print("🤣 click 4")
+        img1.image = isSol ? UIImage(named: "sol")
+        :UIImage(named: "aguila")
+        isSol.toggle()
     }
     @objc func tapImg5(_ sender: UITapGestureRecognizer){
-        print("🤣 click 5")
+        img1.image = isSol ? UIImage(named: "sol")
+        :UIImage(named: "aguila")
+        isSol.toggle()
     }
     @objc func tapImg6(_ sender: UITapGestureRecognizer){
-        print("🤣 click 6")
+        img1.image = isSol ? UIImage(named: "sol")
+        :UIImage(named: "aguila")
+        isSol.toggle()
     }
     @objc func tapImg7(_ sender: UITapGestureRecognizer){
-        print("🤣 click 7")
+        img1.image = isSol ? UIImage(named: "sol")
+        :UIImage(named: "aguila")
+        isSol.toggle()
     }
     @objc func tapImg8(_ sender: UITapGestureRecognizer){
-        print("🤣 click 8")
+        img1.image = isSol ? UIImage(named: "sol")
+        :UIImage(named: "aguila")
+        isSol.toggle()
     }
     @objc func tapImg9(_ sender: UITapGestureRecognizer){
-        print("🤣 click 9")
+        img1.image = isSol ? UIImage(named: "sol")
+        :UIImage(named: "aguila")
+        isSol.toggle()
     }
 }
 

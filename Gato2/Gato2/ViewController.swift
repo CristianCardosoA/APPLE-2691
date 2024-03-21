@@ -81,38 +81,47 @@ class ViewController: UIViewController {
     @objc func tapImg1(_ sender: UITapGestureRecognizer){
         print("🕸️Click 1")
         img1.image = isSol ? UIImage(named: "aguila"):UIImage(named: "cara")
+        isSol.toggle()
     }
     @objc func tapImg2(_ sender: UITapGestureRecognizer){
         print("🕸️Click 2")
         img2.image = isSol ? UIImage(named: "aguila"):UIImage(named: "cara")
+        isSol.toggle()
     }
     @objc func tapImg3(_ sender: UITapGestureRecognizer){
         print("🕸️Click 3")
         img3.image = isSol ? UIImage(named: "aguila"):UIImage(named: "cara")
+        isSol.toggle()
     }
     @objc func tapImg4(_ sender: UITapGestureRecognizer){
         print("🕸️Click 4")
         img4.image = isSol ? UIImage(named: "aguila"):UIImage(named: "cara")
+        isSol.toggle()
     }
     @objc func tapImg5(_ sender: UITapGestureRecognizer){
         print("🕸️Click 5")
         img5.image = isSol ? UIImage(named: "aguila"):UIImage(named: "cara")
+        isSol.toggle()
     }
     @objc func tapImg6(_ sender: UITapGestureRecognizer){
         print("🕸️Click 6")
         img6.image = isSol ? UIImage(named: "aguila"):UIImage(named: "cara")
+        isSol.toggle()
     }
     @objc func tapImg7(_ sender: UITapGestureRecognizer){
         print("🕸️Click 7")
         img7.image = isSol ? UIImage(named: "aguila"):UIImage(named: "cara")
+        isSol.toggle()
     }
     @objc func tapImg8(_ sender: UITapGestureRecognizer){
         print("🕸️Click 8")
         img8.image = isSol ? UIImage(named: "aguila"):UIImage(named: "cara")
+        isSol.toggle()
     }
     @objc func tapImg9(_ sender: UITapGestureRecognizer){
         print("🕸️Click 9")
         img9.image = isSol ? UIImage(named: "aguila"):UIImage(named: "cara")
+        isSol.toggle()
     }
 }
 

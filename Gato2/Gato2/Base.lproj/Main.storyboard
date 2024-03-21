@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gato2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="FTl-UG-hiW">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="W59-6v-ZYl">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="253"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mon20pesosC1_Zapata_anv-1" translatesAutoresizingMaskIntoConstraints="NO" id="mJv-fm-osg">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mon20pesosC1_Zapata_anv-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZqK-Sl-g2P">
+                                                <rect key="frame" x="131" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mon20pesosC1_Zapata_anv-1" translatesAutoresizingMaskIntoConstraints="NO" id="ktZ-y0-mc4">
+                                                <rect key="frame" x="262" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="2he-Li-Vkg">
+                                        <rect key="frame" x="0.0" y="253" width="393" height="253"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mon20pesosC1_Zapata_anv-1" translatesAutoresizingMaskIntoConstraints="NO" id="AQK-qE-Rfe">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mon20pesosC1_Zapata_anv-1" translatesAutoresizingMaskIntoConstraints="NO" id="GRv-S3-7W3">
+                                                <rect key="frame" x="131" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mon20pesosC1_Zapata_anv-1" translatesAutoresizingMaskIntoConstraints="NO" id="tIN-iF-O4n">
+                                                <rect key="frame" x="262" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="daT-fQ-E9f">
+                                        <rect key="frame" x="0.0" y="506" width="393" height="253"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mon20pesosC1_Zapata_anv-1" translatesAutoresizingMaskIntoConstraints="NO" id="MIX-4N-7yo">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mon20pesosC1_Zapata_anv-1" translatesAutoresizingMaskIntoConstraints="NO" id="MED-sU-svc">
+                                                <rect key="frame" x="131" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mon20pesosC1_Zapata_anv-1" translatesAutoresizingMaskIntoConstraints="NO" id="RWo-MU-jWk">
+                                                <rect key="frame" x="262" y="0.0" width="131" height="253"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FTl-UG-hiW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LUJ-Yb-z1k"/>
+                            <constraint firstItem="FTl-UG-hiW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VmU-IP-YVW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FTl-UG-hiW" secondAttribute="bottom" id="dB9-b6-XyK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FTl-UG-hiW" secondAttribute="trailing" id="oJv-DX-Xq5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="img1" destination="mJv-fm-osg" id="Dnr-1I-HnG"/>
+                        <outlet property="img2" destination="ZqK-Sl-g2P" id="oWi-Xc-IYH"/>
+                        <outlet property="img3" destination="ktZ-y0-mc4" id="27H-zJ-gRY"/>
+                        <outlet property="img4" destination="AQK-qE-Rfe" id="zdF-OC-Uv3"/>
+                        <outlet property="img5" destination="GRv-S3-7W3" id="i9x-x3-XnF"/>
+                        <outlet property="img6" destination="tIN-iF-O4n" id="kRZ-Fd-BNy"/>
+                        <outlet property="img7" destination="MIX-4N-7yo" id="FO2-fZ-hg0"/>
+                        <outlet property="img8" destination="MED-sU-svc" id="ChG-WT-INE"/>
+                        <outlet property="img9" destination="RWo-MU-jWk" id="89Y-WU-shO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mon20pesosC1_Zapata_anv-1" width="144" height="145"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -28,90 +28,88 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var img9: UIImageView!
     
-        
+    var isSol = false
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         agregarGestos()
     }
-    
-    var isSol = false
         
     func agregarGestos(){
-        let tap1 = UITapGestureRecognizer(target: self, action:#selector(self.tapIm1))
-        img1.isUserInteractionEnabled =true
-        img1.addGestureRecognizer(tap)
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(self.tapImg1))
+        img1.isUserInteractionEnabled = true
+        img1.addGestureRecognizer(tap1)
         
-        let tap2 = UITapGestureRecognizer(target: self, action:#selector(self.tapImg2))
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.tapImg2))
         img2.isUserInteractionEnabled = true
-        img2.addGestureRecognizer(tap)
+        img2.addGestureRecognizer(tap2)
         
-        let tap3 = UITapGestureRecognizer(target: self, action:#selector(self.tapImg3))
-        img3.isUserInteractionEnabled
-        img3.addGestureRecognizer(tap)
+        let tap3 = UITapGestureRecognizer(target: self, action: #selector(self.tapImg3))
+        img3.isUserInteractionEnabled = true
+        img3.addGestureRecognizer(tap3)
         
-        let tap4 = UITapGestureRecognizer(target: self, action:#selector(self.tapImg4))
+        let tap4 = UITapGestureRecognizer(target: self, action: #selector(self.tapImg4))
         img4.isUserInteractionEnabled = true
-        img4.addGestureRecognizer(tap)
+        img4.addGestureRecognizer(tap4)
         
-        let tap5 = UITapGestureRecognizer(target: self, action:#selector(self.tapImg5)
+        let tap5 = UITapGestureRecognizer(target: self, action: #selector(self.tapImg5))
         img5.isUserInteractionEnabled = true
-        img5.addGestureRecognizer(tap)
+        img5.addGestureRecognizer(tap5)
         
-        let tap6 = UITapGestureRecognizer(target: self, action:#selector(self.tapImg6)
+        let tap6 = UITapGestureRecognizer(target: self, action: #selector(self.tapImg6))
         img6.isUserInteractionEnabled = true
-        img6.addGestureRecognizer(tap)
+        img6.addGestureRecognizer(tap6)
         
-        let tap7 = UITapGestureRecognizer(target: self, action:#selector(self.tapImg7))
+        let tap7 = UITapGestureRecognizer(target: self, action: #selector(self.tapImg7))
         img7.isUserInteractionEnabled = true
-        img7.addGestureRecognizer(tap)
+        img7.addGestureRecognizer(tap7)
         
-        let tap8 = UITapGestureRecognizer(target: self, action:#selector(self.tapImg8))
+        let tap8 = UITapGestureRecognizer(target: self, action: #selector(self.tapImg8))
         img8.isUserInteractionEnabled = true
-        img8.addGestureRecognizer(tap)
+        img8.addGestureRecognizer(tap8)
         
-        let tap9 = UITapGestureRecognizer(target: self, action:#selector(self.tapImg9))
+        let tap9 = UITapGestureRecognizer(target: self, action: #selector(self.tapImg9))
         img9.isUserInteractionEnabled = true
-        img9.addGestureRecognizer(tap)
+        img9.addGestureRecognizer(tap9)
     }
-            
-            
-        
-        
-    func tapImg1(_ sender: UITapGestureRecognizer{
+
+    @objc func tapImg1(_ sender: UITapGestureRecognizer){
             img1.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
             isSol.toggle()
     }
-    func tapImg2(_ sender: UITapGestureRecognizer{
-            img1.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
+    
+    @objc func tapImg2(_ sender: UITapGestureRecognizer){
+            img2.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
             isSol.toggle()
     }
-    func tapImg3(_ sender: UITapGestureRecognizer{
-            img1.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
+    @objc func tapImg3(_ sender: UITapGestureRecognizer){
+            img3.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
             isSol.toggle()
     }
 
-    func tapImg4(_ sender: UITapGestureRecognizer{
-            img1.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
+    @objc func tapImg4(_ sender: UITapGestureRecognizer){
+            img4.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
             isSol.toggle()
     }
-    func tapImg5(_ sender: UITapGestureRecognizer{
-            img1.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
+    @objc func tapImg5(_ sender: UITapGestureRecognizer){
+            img5.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
             isSol.toggle()
     }
-    func tapImg6(_ sender: UITapGestureRecognizer{
-            img1.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
+    @objc func tapImg6(_ sender: UITapGestureRecognizer){
+            img6.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
             isSol.toggle()
     }
-    func tapImg7(_ sender: UITapGestureRecognizer{
-            img1.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
+    @objc func tapImg7(_ sender: UITapGestureRecognizer){
+            img7.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
             isSol.toggle()
     }
 
-    func tapImg8(_ sender: UITapGestureRecognizer{
-            img1.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
+    @objc func tapImg8(_ sender: UITapGestureRecognizer){
+            img8.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
             isSol.toggle()
     }
-    func tapImg9(_ sender: UITapGestureRecognizer{
-            img1.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
+    @objc func tapImg9(_ sender: UITapGestureRecognizer){
+            img9.image = isSol ? UIImage(named:"sol"): UIImage(named: "aguila")
             isSol.toggle()
     }
+}

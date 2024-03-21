@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Gato2
 //
-//  Created by Facultad de Contaduría y Administración on 20/03/24.
+//  Created by Antonio Aaron Hernandez Cabrera on 20/03/24.
 //
 
 import UIKit

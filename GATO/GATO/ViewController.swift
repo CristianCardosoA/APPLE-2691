@@ -33,13 +33,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         iteracion()
         // Do any additional setup after loading the view.
-        
-        
-        
-        
-        
-        
     }
+    
 
 
 }

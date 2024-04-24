@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EWV-mg-gye">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EWV-mg-gye">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xqZ-XK-Ylj">
-                                <rect key="frame" x="0.0" y="59" width="393" height="693"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="613"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Q5U-RG-g59">
                                     <size key="itemSize" width="50" height="50"/>
@@ -91,14 +91,38 @@
                                     <constraint firstAttribute="height" constant="100" id="dpe-1v-kS9"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="45h-TU-mt3">
+                                <rect key="frame" x="0.0" y="672" width="393" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6W-8D-hu9">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ues-7M-Qc9">
+                                        <rect key="frame" x="0.0" y="40" width="393" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="d7n-Nk-ItA"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vci-oz-zS6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4tF-yb-Ekw" firstAttribute="trailing" secondItem="Vci-oz-zS6" secondAttribute="trailing" id="731-sm-xL9"/>
+                            <constraint firstItem="45h-TU-mt3" firstAttribute="top" secondItem="xqZ-XK-Ylj" secondAttribute="bottom" id="9n3-Z3-DvO"/>
+                            <constraint firstItem="Vci-oz-zS6" firstAttribute="trailing" secondItem="45h-TU-mt3" secondAttribute="trailing" id="Bov-Ho-yzx"/>
+                            <constraint firstItem="45h-TU-mt3" firstAttribute="leading" secondItem="Vci-oz-zS6" secondAttribute="leading" id="Lzf-n3-pws"/>
+                            <constraint firstItem="4tF-yb-Ekw" firstAttribute="top" secondItem="45h-TU-mt3" secondAttribute="bottom" id="NST-V0-pR7"/>
                             <constraint firstItem="4tF-yb-Ekw" firstAttribute="leading" secondItem="Vci-oz-zS6" secondAttribute="leading" id="Wtv-Qa-5E2"/>
                             <constraint firstItem="xqZ-XK-Ylj" firstAttribute="leading" secondItem="Vci-oz-zS6" secondAttribute="leading" id="ZTX-68-ONX"/>
-                            <constraint firstItem="4tF-yb-Ekw" firstAttribute="top" secondItem="xqZ-XK-Ylj" secondAttribute="bottom" id="feo-ty-Yo7"/>
+                            <constraint firstItem="4tF-yb-Ekw" firstAttribute="top" secondItem="45h-TU-mt3" secondAttribute="bottom" id="eE4-xs-Q2j"/>
                             <constraint firstAttribute="bottom" secondItem="4tF-yb-Ekw" secondAttribute="bottom" id="htl-77-TBH"/>
                             <constraint firstItem="xqZ-XK-Ylj" firstAttribute="top" secondItem="Vci-oz-zS6" secondAttribute="top" id="wIi-cW-64M"/>
                             <constraint firstItem="Vci-oz-zS6" firstAttribute="trailing" secondItem="xqZ-XK-Ylj" secondAttribute="trailing" id="wrm-qk-DEe"/>

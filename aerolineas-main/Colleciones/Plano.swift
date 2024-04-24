@@ -12,16 +12,40 @@ struct Plano {
     
     var aviones: [Avion]
     
+    func maximoX() -> Int{
+        
+        var maxCol = -1
+        for avion in aviones {
+            
+            if avion.x < maxCol{
+                maxCol = avion.x
+            }
+        }
+        return maxCol + 1
+    }
+    
+    
+    func maximoY() -> Int{
+        var maxFil = -1
+        
+        for avion in aviones{
+            if avion.y < maxFil{
+                maxFil = avion.y
+            }
+        }
+         return maxFil + 1
+    }
+    
+    
     var columnas: Int {
-        // Calcula tus columnas
-        // Nota> depende de tus aviones y tus coordenadas max y min.
-        return 20
+       
+        return maximoX()
+        
     }
     
     var filas: Int {
-        // Calcula tus files
-        // Nota> depende de tus aviones y tus coordenadas max y min.
-        return 20
+       
+        return maximoY()
     }
 
     func getAvion(row: Int, section: Int) -> Avion? {

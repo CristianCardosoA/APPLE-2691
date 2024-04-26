@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xqZ-XK-Ylj">
-                                <rect key="frame" x="0.0" y="59" width="393" height="613"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="643"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Q5U-RG-g59">
                                     <size key="itemSize" width="50" height="50"/>
@@ -84,6 +84,9 @@
                                         <color key="tintColor" systemColor="tableBackgroundColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Reset"/>
+                                        <connections>
+                                            <action selector="tapReset:" destination="EWV-mg-gye" eventType="touchUpInside" id="Mt6-nw-URh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="tableCellBlueTextColor"/>
@@ -91,24 +94,24 @@
                                     <constraint firstAttribute="height" constant="100" id="dpe-1v-kS9"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="45h-TU-mt3">
-                                <rect key="frame" x="0.0" y="672" width="393" height="80"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Iq1-5e-jmY">
+                                <rect key="frame" x="0.0" y="702" width="393" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movimientos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6W-8D-hu9">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Coaliciones" text="Coaliciones: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owI-WZ-GVW">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.33333333333334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coliciones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ues-7M-Qc9">
-                                        <rect key="frame" x="0.0" y="40" width="393" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Movimientos" text="Movimientos: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOU-XO-Mwa">
+                                        <rect key="frame" x="187.33333333333337" y="0.0" width="205.66666666666663" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="d7n-Nk-ItA"/>
+                                    <constraint firstAttribute="height" constant="50" id="aKu-no-Mf4"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -116,20 +119,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4tF-yb-Ekw" firstAttribute="trailing" secondItem="Vci-oz-zS6" secondAttribute="trailing" id="731-sm-xL9"/>
-                            <constraint firstItem="45h-TU-mt3" firstAttribute="top" secondItem="xqZ-XK-Ylj" secondAttribute="bottom" id="9n3-Z3-DvO"/>
-                            <constraint firstItem="Vci-oz-zS6" firstAttribute="trailing" secondItem="45h-TU-mt3" secondAttribute="trailing" id="Bov-Ho-yzx"/>
-                            <constraint firstItem="45h-TU-mt3" firstAttribute="leading" secondItem="Vci-oz-zS6" secondAttribute="leading" id="Lzf-n3-pws"/>
-                            <constraint firstItem="4tF-yb-Ekw" firstAttribute="top" secondItem="45h-TU-mt3" secondAttribute="bottom" id="NST-V0-pR7"/>
+                            <constraint firstItem="Iq1-5e-jmY" firstAttribute="top" secondItem="xqZ-XK-Ylj" secondAttribute="bottom" id="LO2-vf-GlX"/>
                             <constraint firstItem="4tF-yb-Ekw" firstAttribute="leading" secondItem="Vci-oz-zS6" secondAttribute="leading" id="Wtv-Qa-5E2"/>
+                            <constraint firstItem="Iq1-5e-jmY" firstAttribute="leading" secondItem="Vci-oz-zS6" secondAttribute="leading" id="Xag-eb-sx0"/>
                             <constraint firstItem="xqZ-XK-Ylj" firstAttribute="leading" secondItem="Vci-oz-zS6" secondAttribute="leading" id="ZTX-68-ONX"/>
-                            <constraint firstItem="4tF-yb-Ekw" firstAttribute="top" secondItem="45h-TU-mt3" secondAttribute="bottom" id="eE4-xs-Q2j"/>
                             <constraint firstAttribute="bottom" secondItem="4tF-yb-Ekw" secondAttribute="bottom" id="htl-77-TBH"/>
+                            <constraint firstItem="4tF-yb-Ekw" firstAttribute="top" secondItem="Iq1-5e-jmY" secondAttribute="bottom" id="p5b-zH-MCH"/>
+                            <constraint firstItem="Vci-oz-zS6" firstAttribute="trailing" secondItem="Iq1-5e-jmY" secondAttribute="trailing" id="rYW-ii-CA0"/>
                             <constraint firstItem="xqZ-XK-Ylj" firstAttribute="top" secondItem="Vci-oz-zS6" secondAttribute="top" id="wIi-cW-64M"/>
                             <constraint firstItem="Vci-oz-zS6" firstAttribute="trailing" secondItem="xqZ-XK-Ylj" secondAttribute="trailing" id="wrm-qk-DEe"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Coaliciones" destination="owI-WZ-GVW" id="Ppk-Vk-uYv"/>
+                        <outlet property="coaliciones" destination="owI-WZ-GVW" id="YSo-Sa-Srb"/>
                         <outlet property="collection" destination="xqZ-XK-Ylj" id="FZZ-Ck-AtQ"/>
+                        <outlet property="movimientos" destination="FOU-XO-Mwa" id="aI6-ut-rr5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4A-rR-55Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

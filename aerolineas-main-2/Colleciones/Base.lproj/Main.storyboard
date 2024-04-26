@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EWV-mg-gye">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EWV-mg-gye">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -91,14 +91,38 @@
                                     <constraint firstAttribute="height" constant="100" id="dpe-1v-kS9"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="zhv-ur-hPa">
+                                <rect key="frame" x="0.0" y="692" width="393" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numero de colisiones: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjk-2b-3OG">
+                                        <rect key="frame" x="0.0" y="0.0" width="218" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numero de pasos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVq-MJ-oJt">
+                                        <rect key="frame" x="218" y="0.0" width="175" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91976243260000001" green="0.65472364299999997" blue="0.75264129540000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="nao-iQ-gnE"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vci-oz-zS6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4tF-yb-Ekw" firstAttribute="trailing" secondItem="Vci-oz-zS6" secondAttribute="trailing" id="731-sm-xL9"/>
+                            <constraint firstItem="zhv-ur-hPa" firstAttribute="leading" secondItem="Vci-oz-zS6" secondAttribute="leading" id="K33-ZN-13R"/>
+                            <constraint firstItem="4tF-yb-Ekw" firstAttribute="top" secondItem="zhv-ur-hPa" secondAttribute="bottom" id="MST-0L-NJr"/>
+                            <constraint firstItem="Vci-oz-zS6" firstAttribute="trailing" secondItem="zhv-ur-hPa" secondAttribute="trailing" id="Ot5-C9-M7U"/>
                             <constraint firstItem="4tF-yb-Ekw" firstAttribute="leading" secondItem="Vci-oz-zS6" secondAttribute="leading" id="Wtv-Qa-5E2"/>
                             <constraint firstItem="xqZ-XK-Ylj" firstAttribute="leading" secondItem="Vci-oz-zS6" secondAttribute="leading" id="ZTX-68-ONX"/>
-                            <constraint firstItem="4tF-yb-Ekw" firstAttribute="top" secondItem="xqZ-XK-Ylj" secondAttribute="bottom" id="feo-ty-Yo7"/>
+                            <constraint firstItem="4tF-yb-Ekw" firstAttribute="top" secondItem="xqZ-XK-Ylj" secondAttribute="bottom" id="beo-6a-dgv"/>
                             <constraint firstAttribute="bottom" secondItem="4tF-yb-Ekw" secondAttribute="bottom" id="htl-77-TBH"/>
                             <constraint firstItem="xqZ-XK-Ylj" firstAttribute="top" secondItem="Vci-oz-zS6" secondAttribute="top" id="wIi-cW-64M"/>
                             <constraint firstItem="Vci-oz-zS6" firstAttribute="trailing" secondItem="xqZ-XK-Ylj" secondAttribute="trailing" id="wrm-qk-DEe"/>

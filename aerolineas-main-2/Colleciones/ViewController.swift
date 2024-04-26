@@ -39,6 +39,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return planificador.plano.filas
     }
     
+    
+    
+    
     @IBAction func tapBack(_ sender: Any) {
         planificador.back()
         collection.reloadData()

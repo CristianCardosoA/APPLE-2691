@@ -9,17 +9,22 @@ import Foundation
 
 struct Planificador {
     
+    var numPasos: Int
+    
     var plano: Plano
     
     init(aviones: [Avion]){
         plano = Plano(aviones: aviones)
     }
     
-    mutating func next() {
-        plano = plano.next()
-    }
+        mutating func next() {
+            plano = plano.next()
+        }
     
-    mutating func back() {
-        plano = plano.back()
-    }
+    
+        mutating func back() {
+            plano = plano.back()
+        }
+    
 }
+

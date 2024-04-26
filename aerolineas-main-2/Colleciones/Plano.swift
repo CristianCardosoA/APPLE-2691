@@ -4,7 +4,7 @@
 //
 //  Created by Cristian Cardoso on 18/04/24.
 //
-
+import UIKit
 import Foundation
 
 
@@ -44,21 +44,23 @@ struct Plano {
     }
     
     func MaxY() -> Int {
-        var MaxFil: Int = 0
+        var MaxFil: Int = -1
         for avion in aviones{
             if MaxFil < avion.y {
                 MaxFil = avion.y
             }
         }
+        return MaxFil + 1
     }
     
     func MaxX() -> Int {
-        var MaxCol: Int = 0
+        var MaxCol: Int = -1
         for avion in aviones{
             if MaxCol < avion.x {
                 MaxCol = avion.x
             }
-        } 
+        }
+        return MaxCol + 1
     }
     
     

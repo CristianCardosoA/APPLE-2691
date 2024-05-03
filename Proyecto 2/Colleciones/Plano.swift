@@ -11,6 +11,7 @@ import Foundation
 struct Plano {
     
     //Funciones para calcular el Maximo de columnas y filas
+    
     var numeroPaso = 0
     func maxColumnas() -> Int{
         
@@ -58,7 +59,8 @@ struct Plano {
     
     mutating func next() -> Self {
         numeroPaso += 1
-        aviones.removeAll()
+        aviones = Analizador.next(numPaso: numeroPaso, aviones: aviones)
+       // aviones.removeAll()
         return self
         
     }
@@ -66,14 +68,13 @@ struct Plano {
     mutating func back() -> Self {
         
         numeroPaso -= 1
-        // Implementa
-        // SUR +1
-        //norte -1
-        //este +1
-        //oeste -1
-        //diccionario de datos
+        aviones = Analizador.next(numPaso: numeroPaso, aviones: aviones)
         
-        aviones.removeAll()
+        guard numeroPaso -1 > 0 }else{return self}
+        numeroPaso -= 1
+        aviones = Analizador.back(back(numPaso: numeroPaso, aviones: aviones)
+                                  }
         return self
+
     }
 }

@@ -41,7 +41,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func tapBack(_ sender: Any) {
         
-        coaliciones.text = "Coaliciones: 999"
+       // coaliciones.text = "Coliciones: \(planificador.plano.numeroColi)"
        
         
         planificador.back()
@@ -50,8 +50,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     @IBAction func tapNext(_ sender: Any) {
-        
-        coaliciones.text = "Coaliciones: 999"
     
         planificador.next()
         movimientos.text = "Pasos: \(planificador.plano.numeroPaso)"

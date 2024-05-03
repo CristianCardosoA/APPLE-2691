@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AE553CF2BE543F70018022A /* Analizador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE553CE2BE543F70018022A /* Analizador.swift */; };
 		D317A94E2BD228E400C04D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D317A94D2BD228E400C04D71 /* AppDelegate.swift */; };
 		D317A9502BD228E400C04D71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D317A94F2BD228E400C04D71 /* SceneDelegate.swift */; };
 		D317A9522BD228E400C04D71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D317A9512BD228E400C04D71 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AE553CE2BE543F70018022A /* Analizador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analizador.swift; sourceTree = "<group>"; };
 		D317A94A2BD228E400C04D71 /* Colleciones.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colleciones.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D317A94D2BD228E400C04D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D317A94F2BD228E400C04D71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				D317A9582BD228E600C04D71 /* LaunchScreen.storyboard */,
 				D317A95B2BD228E600C04D71 /* Info.plist */,
 				D317A9562BD228E600C04D71 /* Assets.xcassets */,
+				2AE553CE2BE543F70018022A /* Analizador.swift */,
 			);
 			path = Colleciones;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				D317A94E2BD228E400C04D71 /* AppDelegate.swift in Sources */,
 				D317A9702BD2498800C04D71 /* AmericanAirlines.swift in Sources */,
 				D317A9622BD228FB00C04D71 /* MiCollectionViewCell.swift in Sources */,
+				2AE553CF2BE543F70018022A /* Analizador.swift in Sources */,
 				D317A9642BD2391400C04D71 /* Avion.swift in Sources */,
 				D317A9502BD228E400C04D71 /* SceneDelegate.swift in Sources */,
 			);

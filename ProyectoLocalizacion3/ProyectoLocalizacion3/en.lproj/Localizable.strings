@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  ProyectoLocalizacion3
+
+  Created by Cristian Cardoso on 22/05/24.
+  
+*/
+"Alert.message.button" = "Hi good morning";
+"Alert.message.title" = "Hi good morning";
+"Alert.message.message" = "Hi good morning";

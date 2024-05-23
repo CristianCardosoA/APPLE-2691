@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  ProyectoLocalizacion3
+
+  Created by Cristian Cardoso on 22/05/24.
+  
+*/
+"Alert.message.button" = "早安";
+"Alert.message.title" = "早安";
+"Alert.message.message" = "早安";
